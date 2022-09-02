@@ -41,8 +41,8 @@ $menus=json_decode($data, true)["menu"];
         <div class="row mt-4">
             <?php foreach($menus as $menu) : ?>
             <div class="col-md-4">
-              <div class="card mb-3" style="width: 18rem;">
-                    <img src="img/menu/<?= $menu["gambar"]; ?>" class="card-img-top" alt="american-favourite">
+              <div class="card mb-3">
+                    <img src="img/menu/<?= $menu["gambar"]; ?>" class="card-img-top img-fluid" alt="american-favourite">
                     <div class="card-body">
                         <h5 class="card-title"><?= $menu["nama"]; ?></h5>
                         <p class="card-text"><?= $menu["deskripsi"]; ?></p>
