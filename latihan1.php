@@ -1,6 +1,6 @@
 <?php
 $data=file_get_contents("data/pizza.json");
-$menu=json_decode($data, true);
+$menus=json_decode($data, true)["menu"];
 ?>
 
 <!doctype html>
@@ -39,17 +39,19 @@ $menu=json_decode($data, true);
         </div>
 
         <div class="row mt-4">
+            <?php foreach($menus as $menu) : ?>
             <div class="col-md-4">
-              <div class="card" style="width: 18rem;">
-                    <img src="img/menu/american-favourite.jpg" class="card-img-top" alt="american-favourite">
+              <div class="card mb-3" style="width: 18rem;">
+                    <img src="img/menu/<?= $menu["gambar"]; ?>" class="card-img-top" alt="american-favourite">
                     <div class="card-body">
-                        <h5 class="card-title">American Favourite</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <h5 class="card-title">Rp 60.000</h5>
-                        <a href="#" class="btn btn-primary">Buy</a>
+                        <h5 class="card-title"><?= $menu["nama"]; ?></h5>
+                        <p class="card-text"><?= $menu["deskripsi"]; ?></p>
+                        <h5 class="card-title"><?= $menu["harga"]; ?></h5>
+                        <a href="#" class="btn btn-primary">Pesan sekarang</a>
                     </div>
               </div>
             </div>
+            <?php endforeach; ?>
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
