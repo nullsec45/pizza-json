@@ -17,7 +17,7 @@ $menus=json_decode($data, true)["menu"];
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
+        <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="img/logo.png" alt="logo" width="200">
             </a>
@@ -26,7 +26,7 @@ $menus=json_decode($data, true)["menu"];
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link active" href="#">Home</a>     
+                <a class="nav-link active" href="#">All Menu</a>     
             </div>
             </div>
         </div>
