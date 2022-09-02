@@ -1,3 +1,8 @@
+<?php
+$data=file_get_contents("data/pizza.json");
+$menus=json_decode($data, true)["menu"];
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -26,6 +31,29 @@
             </div>
         </div>
     </nav>
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col">
+                <h1>All Menu</h1>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <?php foreach($menus as $menu) : ?>
+            <div class="col-md-4">
+              <div class="card mb-3" style="width: 18rem;">
+                    <img src="img/menu/<?= $menu["gambar"]; ?>" class="card-img-top" alt="american-favourite">
+                    <div class="card-body">
+                        <h5 class="card-title"><?= $menu["nama"]; ?></h5>
+                        <p class="card-text"><?= $menu["deskripsi"]; ?></p>
+                        <h5 class="card-title"><?= $menu["harga"]; ?></h5>
+                        <a href="#" class="btn btn-primary">Pesan sekarang</a>
+                    </div>
+              </div>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
